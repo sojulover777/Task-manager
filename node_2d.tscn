@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b12lqoghxrbrq"]
+
+[ext_resource type="Script" uid="uid://bd5846uau4hvr" path="res://node_2d.gd" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D" unique_id=902531726]
+script = ExtResource("1_wtcfe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1874298982]
+offset_left = 190.0
+offset_top = 1.0
+offset_right = 905.0
+offset_bottom = 646.0
+
+[node name="input" type="LineEdit" parent="." unique_id=1342124096]
+offset_left = 231.0
+offset_top = 351.0
+offset_right = 946.0
+offset_bottom = 382.0
+
+[node name="add_task" type="Button" parent="." unique_id=2132906175]
+offset_right = 172.0
+offset_bottom = 42.0
+text = "ввести задачу"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1462762360]
+offset_left = 915.0
+offset_right = 1152.0
+offset_bottom = 647.0
+
+[node name="resresh" type="Button" parent="." unique_id=2030586288]
+offset_top = 96.0
+offset_right = 173.0
+offset_bottom = 134.0
+text = "обновить данные"
+
+[node name="add_user" type="Button" parent="." unique_id=1524077656]
+offset_top = 49.0
+offset_right = 172.0
+offset_bottom = 88.0
+text = "ввести юзера"
+
+[connection signal="pressed" from="add_task" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="add_task" to="." method="_on_add_task_pressed"]
+[connection signal="pressed" from="resresh" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="resresh" to="." method="_on_resresh_pressed"]
+[connection signal="pressed" from="add_user" to="." method="_on_add_user_pressed"]
