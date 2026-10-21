@@ -41,6 +41,6 @@ text = "ввести юзера"
 
 [connection signal="pressed" from="add_task" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="add_task" to="." method="_on_add_task_pressed"]
-[connection signal="pressed" from="resresh" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="resresh" to="." method="_on_resresh_pressed"]
+[connection signal="pressed" from="resresh" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="add_user" to="." method="_on_add_user_pressed"]
