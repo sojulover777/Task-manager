@@ -1,46 +1,98 @@
 [gd_scene format=3 uid="uid://b12lqoghxrbrq"]
 
 [ext_resource type="Script" uid="uid://bd5846uau4hvr" path="res://node_2d.gd" id="1_wtcfe"]
+[ext_resource type="Theme" uid="uid://dxmhlb87520xe" path="res://delete_button_theme.tres" id="2_0e48y"]
+[ext_resource type="Theme" uid="uid://bqdn1hl5c7fvl" path="res://space-worm-theme/space_worm_theme.tres" id="3_epypp"]
 
 [node name="Node2D" type="Node2D" unique_id=902531726]
 script = ExtResource("1_wtcfe")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1874298982]
-offset_left = 190.0
-offset_top = 1.0
-offset_right = 905.0
-offset_bottom = 646.0
+[node name="ColorRect" type="ColorRect" parent="." unique_id=983383261]
+offset_right = 205.0
+offset_bottom = 648.0
+color = Color(0.3254902, 0.42352942, 0.5921569, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1046016571]
+layout_mode = 0
+offset_left = 919.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.3254902, 0.42352942, 0.5921569, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1323976272]
+offset_left = 205.0
+offset_right = 919.0
+offset_bottom = 648.0
+color = Color(0.29411766, 0.3372549, 0.5019608, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=153455951]
+offset_left = 205.0
+offset_right = 919.0
+offset_bottom = 647.0
+theme = ExtResource("3_epypp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1874298982]
+layout_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="." unique_id=587705236]
+offset_left = 919.0
+offset_right = 1151.0
+offset_bottom = 648.0
+theme = ExtResource("3_epypp")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer2" unique_id=1462762360]
+layout_mode = 2
 
 [node name="input" type="LineEdit" parent="." unique_id=1342124096]
-offset_left = 231.0
-offset_top = 351.0
-offset_right = 946.0
-offset_bottom = 382.0
+offset_left = 211.0
+offset_top = 350.0
+offset_right = 911.0
+offset_bottom = 389.0
+theme = ExtResource("2_0e48y")
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
 
 [node name="add_task" type="Button" parent="." unique_id=2132906175]
-offset_right = 172.0
-offset_bottom = 42.0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 202.0
+offset_bottom = 47.0
+theme = ExtResource("3_epypp")
 text = "ввести задачу"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1462762360]
-offset_left = 915.0
-offset_right = 1152.0
-offset_bottom = 647.0
-
 [node name="resresh" type="Button" parent="." unique_id=2030586288]
+visible = false
+offset_left = 2.0
 offset_top = 96.0
-offset_right = 173.0
-offset_bottom = 134.0
+offset_right = 203.0
+offset_bottom = 141.0
+theme = ExtResource("3_epypp")
 text = "обновить данные"
 
 [node name="add_user" type="Button" parent="." unique_id=1524077656]
+offset_left = 2.0
 offset_top = 49.0
-offset_right = 172.0
-offset_bottom = 88.0
+offset_right = 202.0
+offset_bottom = 92.0
+theme = ExtResource("3_epypp")
 text = "ввести юзера"
 
-[connection signal="pressed" from="add_task" to="." method="_on_button_pressed"]
+[node name="save" type="Button" parent="." unique_id=2126844334]
+offset_left = 4.0
+offset_top = 517.0
+offset_right = 201.0
+offset_bottom = 558.0
+theme = ExtResource("3_epypp")
+text = "сохранить данные"
+
+[node name="load" type="Button" parent="." unique_id=1714327315]
+offset_left = 4.0
+offset_top = 572.0
+offset_right = 201.0
+offset_bottom = 613.0
+theme = ExtResource("3_epypp")
+text = "загрузить данные"
+
 [connection signal="pressed" from="add_task" to="." method="_on_add_task_pressed"]
-[connection signal="pressed" from="resresh" to="." method="_on_resresh_pressed"]
-[connection signal="pressed" from="resresh" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="add_user" to="." method="_on_add_user_pressed"]
+[connection signal="pressed" from="save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="load" to="." method="_on_load_pressed"]

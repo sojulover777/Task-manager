@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cakhlkrvcg3og"]
+
+[ext_resource type="Theme" uid="uid://bqdn1hl5c7fvl" path="res://Themes/space-worm-theme/space_worm_theme.tres" id="1_qk6iy"]
+
+[node name="UITest" type="Control" unique_id=347582511]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qk6iy")
+
+[node name="Panel" type="Panel" parent="." unique_id=1470963827]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CodeEdit" type="CodeEdit" parent="Panel" unique_id=102879111]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=855658807]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/Panel" unique_id=11703162]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MenuBar" type="MenuBar" parent="Panel/Panel/MarginContainer" unique_id=86437824]
+layout_mode = 2
+
+[node name="File" type="PopupMenu" parent="Panel/Panel/MarginContainer/MenuBar" unique_id=561794863]
+auto_translate_mode = 1
+title = "File"
+item_count = 4
+item_0/text = "New"
+item_0/id = 0
+item_1/text = "Open"
+item_1/id = 1
+item_2/text = "Save"
+item_2/id = 2
+item_2/separator = true
+item_3/text = "Quit Program"
+item_3/id = 3
+
+[node name="Edit" type="PopupMenu" parent="Panel/Panel/MarginContainer/MenuBar" unique_id=2002045230]
+title = "Edit"

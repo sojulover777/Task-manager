@@ -11,13 +11,22 @@ config_version=5
 [application]
 
 config/name="четочето"
+run/main_scene="uid://b12lqoghxrbrq"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Save="*uid://b6nh65bv58b6v"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/saltmire_save_lite/plugin.cfg")
 
 [physics]
 

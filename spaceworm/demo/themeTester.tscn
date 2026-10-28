@@ -1,0 +1,316 @@
+[gd_scene format=3 uid="uid://yylisnkepapq"]
+
+[ext_resource type="Theme" uid="uid://bqdn1hl5c7fvl" path="res://Themes/space-worm-theme/space_worm_theme.tres" id="1_3qtfh"]
+[ext_resource type="Texture2D" uid="uid://bjtspg6xoif35" path="res://Themes/space-worm-theme/icons/SWIcon_32_Transparent.png" id="2_3qtfh"]
+[ext_resource type="Script" uid="uid://u7aobmk1qjd" path="res://Scripts/ThemeTesterScript.gd" id="2_4tb8x"]
+[ext_resource type="Texture2D" uid="uid://d14vklfw6tr5d" path="res://Themes/space-worm-theme/icons/SWIcon_16_Transparent-export.png" id="2_bldmq"]
+[ext_resource type="FontFile" uid="uid://b3w3mr3ux4ngd" path="res://Themes/space-worm-theme/fonts/PixeloidMono.ttf" id="4_sb6em"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_3qtfh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4tb8x"]
+font = ExtResource("4_sb6em")
+font_size = 14
+
+[node name="ThemeTester" type="Control" unique_id=2133747949]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3qtfh")
+script = ExtResource("2_4tb8x")
+
+[node name="Panel" type="Panel" parent="." unique_id=1978122660]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=2121914650]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/Panel" unique_id=832190251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MenuBar" type="MenuBar" parent="Panel/Panel/MarginContainer" unique_id=1733051138]
+layout_mode = 2
+
+[node name="File" type="PopupMenu" parent="Panel/Panel/MarginContainer/MenuBar" unique_id=1802827217]
+oversampling_override = 1.0
+title = "File"
+item_count = 2
+item_0/text = "About"
+item_0/id = 0
+item_1/text = "Quit"
+item_1/id = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=2065475718]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 42.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=873720868]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer" unique_id=543467001]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=148224264]
+layout_mode = 2
+text = "Button 1
+"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1311712400]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_3qtfh")
+selected = 0
+item_count = 5
+popup/item_0/text = "Option Button"
+popup/item_0/id = 0
+popup/item_1/text = "Lots of"
+popup/item_1/id = 1
+popup/item_2/text = "Options here"
+popup/item_2/id = 2
+popup/item_3/icon = ExtResource("2_bldmq")
+popup/item_3/id = 4
+popup/item_3/separator = true
+popup/item_4/text = "Quit"
+popup/item_4/id = 3
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=292961366]
+layout_mode = 2
+text = "Label"
+
+[node name="LineEdit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=429223561]
+layout_mode = 2
+text = "LineEdit"
+clear_button_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=539155292]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=951624844]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelHSlider" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=1352334705]
+layout_mode = 2
+text = "HSlider"
+
+[node name="HSlider" type="HSlider" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=526869575]
+layout_mode = 2
+
+[node name="LabelHScrollBar" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=178967825]
+layout_mode = 2
+text = "HScrollBar"
+
+[node name="HScrollBar" type="HScrollBar" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=1489824062]
+layout_mode = 2
+
+[node name="LabelProgressBar" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=496844838]
+layout_mode = 2
+text = "ProgressBar"
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=1320183479]
+layout_mode = 2
+value = 45.0
+
+[node name="VSeparator" type="VSeparator" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=239020538]
+layout_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=680501661]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Thingies" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/GridContainer" unique_id=827574872]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "VSlider
+VScrollBar"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/GridContainer" unique_id=784554224]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VSlider" type="VSlider" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/GridContainer/VBoxContainer" unique_id=1190789591]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="VScrollBar" type="VScrollBar" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/GridContainer/VBoxContainer" unique_id=525379082]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/GridContainer" unique_id=1777095201]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Click"
+color = Color(0.34901962, 0.3372549, 0.78431374, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer" unique_id=332338259]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=494741365]
+layout_mode = 2
+text = "SpinBox"
+
+[node name="SpinBox" type="SpinBox" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1599371219]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=305822882]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hello! This is a text edit control!"
+wrap_mode = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer" unique_id=471720985]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=64584680]
+layout_mode = 2
+texture = ExtResource("2_3qtfh")
+stretch_mode = 4
+metadata/_tab_index = 2
+
+[node name="ItemList" type="ItemList" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1311771871]
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 3
+item_0/text = "Item 1"
+item_1/text = "Item 2"
+item_2/text = "Item 3"
+
+[node name="TabContainer" type="TabContainer" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1829149150]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 1
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer" unique_id=1320391340]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer/Panel" unique_id=388688949]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer/Panel/MarginContainer" unique_id=610935584]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer/Panel/MarginContainer/VBoxContainer" unique_id=1073063168]
+layout_mode = 2
+size_flags_vertical = 3
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer/Panel/MarginContainer/VBoxContainer" unique_id=256264062]
+layout_mode = 2
+text = "Gimme!"
+
+[node name="Panel2" type="Panel" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer" unique_id=941223725]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer/Panel2" unique_id=1527537374]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer/Panel2/MarginContainer" unique_id=1022883668]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer/Panel2/MarginContainer/VBoxContainer" unique_id=1760970846]
+layout_mode = 2
+text = "No,me!"
+
+[node name="CheckBox" type="CheckBox" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer/Panel2/MarginContainer/VBoxContainer" unique_id=216142542]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer3/TabContainer/Panel2/MarginContainer/VBoxContainer" unique_id=442747365]
+layout_mode = 2
+text = "Click"
+
+[node name="Window" type="Window" parent="." unique_id=1870262889]
+oversampling_override = 1.0
+title = "About"
+initial_position = 2
+size = Vector2i(256, 179)
+visible = false
+
+[node name="Panel" type="Panel" parent="Window" unique_id=571939867]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Window/Panel" unique_id=2090273575]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.2438965
+offset_top = 4.0
+offset_right = -6.2438965
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tester for the Space Worm Godot UI theme.
+
+Version 0.9
+Made in 2026 by Softwave
+https://s0ftwave.net/
+Public Domain (See LICENSE)"
+label_settings = SubResource("LabelSettings_4tb8x")
+autowrap_mode = 3
+
+[connection signal="id_pressed" from="Panel/Panel/MarginContainer/MenuBar/File" to="." method="_on_file_id_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
