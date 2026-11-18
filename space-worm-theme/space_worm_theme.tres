@@ -1,15 +1,15 @@
 [gd_resource type="Theme" format=3 uid="uid://bqdn1hl5c7fvl"]
 
-[ext_resource type="FontFile" uid="uid://dcoyeg1tf1500" path="res://space-worm-theme/fonts/ProggyClean.ttf" id="1_6u0fb"]
+[ext_resource type="FontFile" uid="uid://dcoyeg1tf1500" path="res://spaceworm/themes/space-worm-theme/fonts/ProggyClean.ttf" id="1_6u0fb"]
 [ext_resource type="Texture2D" uid="uid://ba7mvawrmi0qt" path="res://spaceworm/themes/space-worm-theme/button/Blue_Hover.png" id="1_gebbq"]
 [ext_resource type="Texture2D" uid="uid://bnf4a0raxkqen" path="res://spaceworm/themes/space-worm-theme/general/Blue.png" id="1_lfy6v"]
 [ext_resource type="FontFile" uid="uid://dhbkkexrexulu" path="res://Mint Type - Orchidea Pro Medium.otf" id="1_t5gq0"]
 [ext_resource type="Texture2D" uid="uid://dvx3hvav2n7b7" path="res://spaceworm/themes/space-worm-theme/panel/Panel.png" id="1_ulhmq"]
 [ext_resource type="Texture2D" uid="uid://bkxvfdx82p2lq" path="res://spaceworm/themes/space-worm-theme/scrollbar/Slider_Blue_Grabber_Horizontal.png" id="4_7hqu0"]
 [ext_resource type="Texture2D" uid="uid://1d8q46t3elp8" path="res://spaceworm/themes/space-worm-theme/checkbox/Checkbox_Blue_Checked.png" id="4_pbf4m"]
-[ext_resource type="Texture2D" uid="uid://cwpjdqbvip2vt" path="res://space-worm-theme/textedit/TextEditWhite.png" id="5_3rf8f"]
+[ext_resource type="Texture2D" uid="uid://cwpjdqbvip2vt" path="res://spaceworm/themes/space-worm-theme/textedit/TextEditWhite.png" id="5_3rf8f"]
 [ext_resource type="Texture2D" uid="uid://bk7etkvyd8tlh" path="res://spaceworm/themes/space-worm-theme/checkbox/Checkbox_Blue_Unchecked.png" id="5_f0op2"]
-[ext_resource type="Texture2D" uid="uid://c1nih1844agfm" path="res://space-worm-theme/textedit/TextEditDisabled.png" id="6_ks1cx"]
+[ext_resource type="Texture2D" uid="uid://c1nih1844agfm" path="res://spaceworm/themes/space-worm-theme/textedit/TextEditDisabled.png" id="6_ks1cx"]
 [ext_resource type="Texture2D" uid="uid://cdrydq61w6idd" path="res://spaceworm/themes/space-worm-theme/scrollbar/Slider_Blue_Grabber.png" id="8_8ni7u"]
 [ext_resource type="Texture2D" uid="uid://w58p2fbmrwo0" path="res://spaceworm/themes/space-worm-theme/general/LighterBlue.png" id="8_88cds"]
 [ext_resource type="Texture2D" uid="uid://dpy10unqk34u2" path="res://spaceworm/themes/space-worm-theme/scrollbar/Slider_Blue_Background.png" id="9_x6qk5"]
@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cwlexsvog6plr" path="res://spaceworm/themes/space-worm-theme/general/UpArrow.png" id="22_bqx4i"]
 [ext_resource type="Texture2D" uid="uid://lncix2lqma8" path="res://spaceworm/themes/space-worm-theme/general/LeftArrow.png" id="23_ya1kp"]
 [ext_resource type="FontFile" uid="uid://c384021mlseoa" path="res://spaceworm/themes/space-worm-theme/fonts/CozetteVector.ttf" id="27_3l8xp"]
-[ext_resource type="FontFile" uid="uid://vgrly6yr16m7" path="res://space-worm-theme/fonts/PixelCode.ttf" id="35_b2ttu"]
+[ext_resource type="FontFile" uid="uid://vgrly6yr16m7" path="res://spaceworm/themes/space-worm-theme/fonts/PixelCode.ttf" id="35_b2ttu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gcxt6"]
 texture = ExtResource("1_lfy6v")

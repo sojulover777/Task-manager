@@ -2,97 +2,221 @@
 
 [ext_resource type="Script" uid="uid://bd5846uau4hvr" path="res://node_2d.gd" id="1_wtcfe"]
 [ext_resource type="Theme" uid="uid://dxmhlb87520xe" path="res://delete_button_theme.tres" id="2_0e48y"]
-[ext_resource type="Theme" uid="uid://bqdn1hl5c7fvl" path="res://space-worm-theme/space_worm_theme.tres" id="3_epypp"]
+[ext_resource type="Theme" uid="uid://bqdn1hl5c7fvl" path="res://spaceworm/themes/space-worm-theme/space_worm_theme.tres" id="3_epypp"]
+[ext_resource type="FontFile" uid="uid://dhbkkexrexulu" path="res://Mint Type - Orchidea Pro Medium.otf" id="4_kdubu"]
+[ext_resource type="Texture2D" uid="uid://l6b7nnby8rpb" path="res://images.jpg" id="5_d21ai"]
+[ext_resource type="FontFile" uid="uid://c384021mlseoa" path="res://spaceworm/themes/space-worm-theme/fonts/CozetteVector.ttf" id="6_rj586"]
 
 [node name="Node2D" type="Node2D" unique_id=902531726]
 script = ExtResource("1_wtcfe")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=983383261]
-offset_right = 205.0
-offset_bottom = 648.0
+offset_right = 392.0
+offset_bottom = 1080.0
 color = Color(0.3254902, 0.42352942, 0.5921569, 1)
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1046016571]
 layout_mode = 0
-offset_left = 919.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = 1475.0
+offset_right = 1921.0
+offset_bottom = 1080.0
 color = Color(0.3254902, 0.42352942, 0.5921569, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1323976272]
-offset_left = 205.0
-offset_right = 919.0
-offset_bottom = 648.0
+offset_left = 384.0
+offset_top = -3.0
+offset_right = 1494.0
+offset_bottom = 1079.0
 color = Color(0.29411766, 0.3372549, 0.5019608, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=153455951]
-offset_left = 205.0
-offset_right = 919.0
-offset_bottom = 647.0
+offset_left = 419.0
+offset_top = 24.0
+offset_right = 1469.0
+offset_bottom = 1024.0
 theme = ExtResource("3_epypp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1874298982]
 layout_mode = 2
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="." unique_id=587705236]
-offset_left = 919.0
-offset_right = 1151.0
-offset_bottom = 648.0
+offset_left = 1528.0
+offset_top = 22.0
+offset_right = 1878.0
+offset_bottom = 1022.0
 theme = ExtResource("3_epypp")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer2" unique_id=1462762360]
 layout_mode = 2
 
+[node name="Desc_show" type="Button" parent="." unique_id=1700060117]
+offset_left = 15.0
+offset_top = 689.0
+offset_right = 365.0
+offset_bottom = 769.0
+theme = ExtResource("3_epypp")
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 32
+text = "описание"
+
+[node name="ColorRect" type="ColorRect" parent="Desc_show" unique_id=128769266]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 115.0
+offset_right = 348.0
+offset_bottom = 122.0
+color = Color(0.29411766, 0.3372549, 0.5019608, 1)
+
 [node name="input" type="LineEdit" parent="." unique_id=1342124096]
-offset_left = 211.0
-offset_top = 350.0
-offset_right = 911.0
-offset_bottom = 389.0
+visible = false
+offset_left = 403.0
+offset_top = 691.0
+offset_right = 1472.0
+offset_bottom = 752.0
 theme = ExtResource("2_0e48y")
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
 
 [node name="add_task" type="Button" parent="." unique_id=2132906175]
-offset_left = 2.0
-offset_top = 5.0
-offset_right = 202.0
-offset_bottom = 47.0
+offset_left = 18.0
+offset_top = 53.0
+offset_right = 368.0
+offset_bottom = 133.0
 theme = ExtResource("3_epypp")
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 32
 text = "ввести задачу"
 
 [node name="resresh" type="Button" parent="." unique_id=2030586288]
-visible = false
-offset_left = 2.0
-offset_top = 96.0
-offset_right = 203.0
-offset_bottom = 141.0
+offset_left = 19.0
+offset_top = 235.0
+offset_right = 369.0
+offset_bottom = 315.0
 theme = ExtResource("3_epypp")
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 32
 text = "обновить данные"
 
 [node name="add_user" type="Button" parent="." unique_id=1524077656]
-offset_left = 2.0
-offset_top = 49.0
-offset_right = 202.0
-offset_bottom = 92.0
+offset_left = 18.0
+offset_top = 144.0
+offset_right = 368.0
+offset_bottom = 224.0
 theme = ExtResource("3_epypp")
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 32
 text = "ввести юзера"
 
 [node name="save" type="Button" parent="." unique_id=2126844334]
-offset_left = 4.0
-offset_top = 517.0
-offset_right = 201.0
-offset_bottom = 558.0
+offset_left = 13.0
+offset_top = 842.0
+offset_right = 363.0
+offset_bottom = 922.0
 theme = ExtResource("3_epypp")
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 32
 text = "сохранить данные"
 
 [node name="load" type="Button" parent="." unique_id=1714327315]
-offset_left = 4.0
-offset_top = 572.0
-offset_right = 201.0
-offset_bottom = 613.0
+offset_left = 13.0
+offset_top = 932.0
+offset_right = 363.0
+offset_bottom = 1012.0
 theme = ExtResource("3_epypp")
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 32
 text = "загрузить данные"
 
+[node name="pipka" type="ColorRect" parent="." unique_id=483541177]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.3254902, 0.42352942, 0.5921569, 1)
+
+[node name="ColorRect" type="ColorRect" parent="pipka" unique_id=1680250140]
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 59.0
+color = Color(0.29411766, 0.3372549, 0.5019608, 1)
+
+[node name="Button" type="Button" parent="pipka" unique_id=702119318]
+layout_mode = 0
+offset_left = 1856.0
+offset_top = 3.0
+offset_right = 1917.0
+offset_bottom = 56.0
+theme = ExtResource("2_0e48y")
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "x"
+
+[node name="Label" type="Label" parent="pipka" unique_id=720426589]
+layout_mode = 0
+offset_left = 711.0
+offset_top = 385.0
+offset_right = 1893.0
+offset_bottom = 958.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7647059)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 32
+text = "Программа представляет собой программное обеспечение для управления задачами, разработанное студентами лечебного факультета Северного государственного медицинского университета (СГМУ). Авторами проекта являются Проничев Алексей Павлович (220 группа, 2 курс) и Максимчук Севастьян Игоревич (219 группа, 2 курс). Разработка была выполнена в 2026 году.
+Основная цель программы — демонстрация функциональных возможностей системы управления задачами. Приложение позволяет пользователям создавать, редактировать, отслеживать и организовывать задачи, обеспечивая удобный интерфейс для эффективного планирования и контроля выполнения поставленных целей. Программа может использоваться как инструмент для повышения личной продуктивности и организации рабочего процесса."
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="pipka/Label" unique_id=213946837]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -90.0
+offset_right = 418.0
+offset_bottom = -25.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.54901963)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 64
+text = "О программе:"
+
+[node name="Label2" type="Label" parent="pipka" unique_id=1734456535]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ColorRect" type="ColorRect" parent="pipka/Label2" unique_id=2048415745]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 99.0
+offset_right = 663.0
+offset_bottom = 1040.0
+color = Color(0.29411766, 0.3372549, 0.5019608, 1)
+
+[node name="TextureRect" type="TextureRect" parent="pipka/Label2/ColorRect" unique_id=131119123]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 579.0
+offset_bottom = 503.0
+texture = ExtResource("5_d21ai")
+
+[node name="Label" type="Label" parent="pipka/Label2/ColorRect/TextureRect" unique_id=1160144584]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 511.0
+offset_right = 484.0
+offset_bottom = 544.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rj586")
+theme_override_font_sizes/font_size = 32
+text = "*Реальное фото Алексея Павловича."
+
+[connection signal="pressed" from="Desc_show" to="." method="_on_desc_show_pressed"]
 [connection signal="pressed" from="add_task" to="." method="_on_add_task_pressed"]
 [connection signal="pressed" from="add_user" to="." method="_on_add_user_pressed"]
 [connection signal="pressed" from="save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="pipka/Button" to="." method="_on_button_pressed"]

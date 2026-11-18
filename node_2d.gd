@@ -5,6 +5,7 @@ extends Node2D
 @onready var user_scroll = $ScrollContainer2
 @onready var user_container = $ScrollContainer2/VBoxContainer2
 @onready var input = $input
+@onready var description = $pipka
 
 var users_lib = {}
 
@@ -23,21 +24,18 @@ var green_icon = preload("res://green.png")
 const SAVE_SLOT = "my_users_data"
 
 func _ready() -> void:
-	# 1. Загружаем данные при старте, если они есть
 	_try_load_data()
 	
-	# Очищаем контейнер от возможных старых узлов (на всякий случай)
 	for child in user_container.get_children():
 		child.queue_free()
 	user_buttons.clear()
 	
-	# 2. Создаем кнопки для загруженных пользователей
 	for user_name in users_lib:
 		_create_user_button(user_name)
 	
 	input.visible = false
+	description.visible = false
 
-# --- ФУНКЦИЯ ПЕРЕНОСА ТЕКСТА ---
 func wrap_text(text: String, max_chars_per_line: int = 20) -> String:
 	var words = text.split(" ")
 	var lines = []
@@ -67,17 +65,16 @@ func wrap_text(text: String, max_chars_per_line: int = 20) -> String:
 	
 	return "\n".join(lines)
 
-# --- СОЗДАНИЕ UI ---
 func _create_user_button(user_name: String) -> Button:
 	var hbox = HBoxContainer.new()
 	
 	var user = Button.new()
-	user.text = wrap_text(user_name, 10) 
+	user.text = wrap_text(user_name, 30) 
 	user.set_meta("raw_name", user_name) 
 	user.theme =  main_theme
 	user.icon = red_icon
-	user.add_theme_constant_override("icon_max_width", 16)
-	user.size_flags_horizontal = Control.SIZE_EXPAND_FILL # Растягиваем кнопку юзера
+	user.add_theme_constant_override("icon_max_width", 32)
+	user.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	
 	var delete_user = Button.new()
 	delete_user.text = "X"
@@ -101,10 +98,10 @@ func _create_task_row(task_id: String, task_data: Dictionary) -> void:
 	# Приводим stage к int при загрузке
 	var current_stage = int(task_data["stage"])
 	
-	task.text = wrap_text(task_data["title"], 38)
+	task.text = wrap_text(task_data["title"] +" - выдано в: "+ task_data["time"], 65)
 	task.theme = main_theme
 	_apply_color_changes(task, current_stage)
-	task.add_theme_constant_override("icon_max_width", 16)
+	task.add_theme_constant_override("icon_max_width", 32)
 	task.set_meta("color_stage", current_stage)
 	
 	task.custom_minimum_size = Vector2(250, 0) 
@@ -131,7 +128,6 @@ func _apply_color_changes(btn: Button, stage: int):
 		1: btn.icon = orange_icon
 		2: btn.icon = green_icon
 
-# --- ДОБАВЛЕНИЕ ДАННЫХ ---
 func _on_add_user_pressed() -> void:
 	input.placeholder_text = "введите имя юзера"
 	input.visible = true
@@ -190,14 +186,15 @@ func _add_task(title: String) -> void:
 	var task_id = str(counter) 
 	counter += 1
 	
-	users_lib[current_user][task_id] = {"title": title, "stage": 0}
+	var time = Time.get_time_string_from_system()
+	
+	users_lib[current_user][task_id] = {"title": title, "stage": 0, "time": time}
 	_create_task_row(task_id, users_lib[current_user][task_id])
 	
 	if task_scroll:
 		await get_tree().process_frame
 		task_scroll.scroll_vertical = task_scroll.get_v_scroll_bar().max_value
 
-# --- СОБЫТИЯ КНОПОК ЗАДАЧ ---
 func _on_delete_task(row: Node, id: String) -> void:
 	if current_user != "" and users_lib.has(current_user):
 		users_lib[current_user].erase(id)
@@ -212,27 +209,21 @@ func _on_task_color(btn: Button, task_id: String) -> void:
 	btn.set_meta("color_stage", stage)
 	_apply_color_changes(btn, stage)
 
-# --- СОБЫТИЯ КНОПОК ПОЛЬЗОВАТЕЛЕЙ ---
 func _on_delete_user(user: Button, hbox: HBoxContainer):
 	var user_name = user.get_meta("raw_name", user.text)
 	
-	# 1. Удаляем из словаря
 	users_lib.erase(user_name)
 	
-	# 2. Удаляем из массива кнопок
 	user_buttons.erase(user)
 	
-	# 3. Удаляем визуал (кнопку и контейнер)
 	hbox.queue_free()
 	
-	# 4. Если удалили текущего выбранного - очищаем задачи
 	if current_user == user_name:
 		current_user = ""
 		selected_button = null
 		for child in task_container.get_children():
 			child.queue_free()
 			
-	# 5. Автосохранение
 	Save.write(SAVE_SLOT, users_lib)
 	print("Пользователь ", user_name, " удален.")
 
@@ -254,7 +245,6 @@ func _on_user_pressed(user: Button) -> void:
 	if not users_lib.has(current_user):
 		return
 	
-	# Загружаем задачи выбранного юзера
 	for task_id in users_lib[current_user]:
 		var task_data = users_lib[current_user][task_id]
 		_create_task_row(task_id, task_data)
@@ -263,18 +253,14 @@ func _on_user_pressed(user: Button) -> void:
 		await get_tree().process_frame
 		task_scroll.scroll_vertical = 0
 
-# --- СОХРАНЕНИЕ И ЗАГРУЗКА ---
 func _on_save_pressed() -> void:
 	Save.write(SAVE_SLOT, users_lib)
-	print("💾 Данные сохранены. Пользователей: ", users_lib.size())
 
 func _on_load_pressed() -> void:
 	_try_load_data()
 	
 	if not users_lib.is_empty():
-		print("📥 Данные загружены. Пользователей: ", users_lib.size())
 		
-		# ИСПРАВЛЕНО: Очищаем контейнеры целиком, а не только массив кнопок
 		for child in user_container.get_children():
 			child.queue_free()
 		user_buttons.clear()
@@ -285,11 +271,8 @@ func _on_load_pressed() -> void:
 		current_user = ""
 		selected_button = null
 		
-		# Создаем кнопки заново
 		for user_name in users_lib:
 			_create_user_button(user_name)
-	else:
-		print("📂 Сохранений не найдено.")
 
 func _try_load_data() -> void:
 	var loaded_data = Save.read(SAVE_SLOT)
@@ -297,7 +280,6 @@ func _try_load_data() -> void:
 	if loaded_data != null and loaded_data is Dictionary:
 		users_lib = loaded_data
 		
-		# Восстанавливаем счетчик, чтобы новые задачи не перезаписывали старые
 		var max_id = 0
 		for user_name in users_lib:
 			for task_key in users_lib[user_name]:
@@ -305,3 +287,9 @@ func _try_load_data() -> void:
 				if id_num >= max_id:
 					max_id = id_num + 1
 		counter = max_id
+
+func _on_desc_show_pressed() -> void:
+	description.visible = true
+
+func _on_button_pressed() -> void:
+	description.visible = false
