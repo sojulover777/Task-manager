@@ -61,10 +61,10 @@ text = "описание"
 
 [node name="ColorRect" type="ColorRect" parent="Desc_show" unique_id=128769266]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 115.0
-offset_right = 348.0
-offset_bottom = 122.0
+offset_left = 2.0
+offset_top = 111.0
+offset_right = 347.0
+offset_bottom = 118.0
 color = Color(0.29411766, 0.3372549, 0.5019608, 1)
 
 [node name="input" type="LineEdit" parent="." unique_id=1342124096]
@@ -152,6 +152,7 @@ theme_override_font_sizes/font_size = 32
 text = "x"
 
 [node name="Label" type="Label" parent="pipka" unique_id=720426589]
+visible = false
 layout_mode = 0
 offset_left = 711.0
 offset_top = 385.0
@@ -182,20 +183,15 @@ theme_override_fonts/font = ExtResource("4_kdubu")
 theme_override_font_sizes/font_size = 64
 text = "О программе:"
 
-[node name="Label2" type="Label" parent="pipka" unique_id=1734456535]
+[node name="ColorRect" type="ColorRect" parent="pipka/Label" unique_id=2048415745]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="ColorRect" type="ColorRect" parent="pipka/Label2" unique_id=2048415745]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 99.0
-offset_right = 663.0
-offset_bottom = 1040.0
+offset_left = -661.0
+offset_top = -286.0
+offset_right = -48.0
+offset_bottom = 655.0
 color = Color(0.29411766, 0.3372549, 0.5019608, 1)
 
-[node name="TextureRect" type="TextureRect" parent="pipka/Label2/ColorRect" unique_id=131119123]
+[node name="TextureRect" type="TextureRect" parent="pipka/Label/ColorRect" unique_id=131119123]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 27.0
@@ -203,7 +199,7 @@ offset_right = 579.0
 offset_bottom = 503.0
 texture = ExtResource("5_d21ai")
 
-[node name="Label" type="Label" parent="pipka/Label2/ColorRect/TextureRect" unique_id=1160144584]
+[node name="Label" type="Label" parent="pipka/Label/ColorRect/TextureRect" unique_id=1160144584]
 layout_mode = 0
 offset_left = -3.0
 offset_top = 511.0
@@ -213,6 +209,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_rj586")
 theme_override_font_sizes/font_size = 32
 text = "*Реальное фото Алексея Павловича."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pipka" unique_id=2068595856]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 115.0
+offset_right = 1858.0
+offset_bottom = 1025.0
 
 [connection signal="pressed" from="Desc_show" to="." method="_on_desc_show_pressed"]
 [connection signal="pressed" from="add_task" to="." method="_on_add_task_pressed"]
